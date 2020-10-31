@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[russian]{babel} 
+\usepackage[14pt]{extsizes}
+\usepackage{amsmath} 
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\title{Алгоритмы и структуры данных\\Домашняя работа\\Неделя 1}
+\date{17.09.2020}
+\author{Иван Алексеев M3139}
+
+\begin{document}
+
+	\pagenumbering{gobble} % сейчас будет титульная страницу, отключим нумерацию страниц
+	\maketitle % эта команда печатает титульную страницу
+	\subsection*{Задача 1}
+	
+	\textbf{Доказать:} $\sum\limits_{i=1}^{n+5} 2^i = O(2^n)$ \\
+	\textbf{Решение:} \\
+	
+	Преобразуем $\sum\limits_{i=1}^{n+5} 2^i = 2^{n+6} - 1$
+	
+	Теперь вспомним определение $O(g(n))$:
+	$$ f(n) = O(g(n)) \Leftrightarrow \exists c > 0 \; \exists n_0 \in \mathds{N} \; \forall n > n_0 : f(n) \leq c\cdot g(n)$$
+	
+	Заметим, что при $c = 2^7$ и $n_0 = 1 \; \forall n > n_0 = 1$ выполянется $$\sum\limits_{i=1}^{n+5} 2^i = 2^{n+6} - 1 \leq c \cdot 2^n = 2^{n+7} = 2^{n + 6} + 2^{n + 6}$$
+
+	$\Leftrightarrow\sum\limits_{i=1}^{n+5} 2^i = 2^{n+6} - 1 = O(2^n)$ , ч.т.д.
+	
+	
+	
+	\subsection*{Задача 2}
+	\textbf{Доказать:} $\frac{n^3}{6} - 7n^{2} = \Omega(n^3)$ \\
+	\textbf{Решение:} \\
+	
+	Вспомним определение $\Omega(g(n))$:
+	$$ f(n) = \Omega(g(n)) \Leftrightarrow \exists c > 0 \; \exists n_0 \in \mathds{N} \; \forall n > n_0 : f(n) \geq c\cdot g(n)$$
+	
+	Пусть $c = \frac{1}{30} \; n_0 = 52$ :
+	$$\frac{n^3}{6} - 7n^{2} \; \vee \; c \cdot n^3 = \frac{n^3}{30} \ \Leftrightarrow  \ 5n^3 - 210n^2 \; \vee \; n^3$$
+	$$ 2n  \; \vee \; 105 \ \Leftrightarrow  \  2n  \; \geq \; 105, n > 52$$
+	
+	$\Leftrightarrow\frac{n^3}{6} - 7n^{2} = \Omega(n^3)$ , ч.т.д.
+	
+	
+	
+	
+	\subsection*{Задача 3}
+	\textbf{Доказать:} $max(f(n), g(n)) = \Theta(f(n) + g(n))), \ f(n) \geq g(n) \geq 0$ \\
+	\textbf{Решение:} \\
+	
+	Вспомним определение $\Theta(g(n))$:
+	$$ f(n) = \Theta(g(n)) \Leftrightarrow \exists c_1, c_2 > 0 \; \exists n_0 \in \mathds{N} \; \forall n > n_0: c_1\cdot g(n) \leq f(n) \leq c_2\cdot g(n)$$
+	
+	Пусть из пары функций $f(n)$ будет больше $g(n)$. Тогда $max(f(n), g(n)) = f(n)$. Учитывая вышесказанное, заметим, что из $f(n) \geq g(n)$ следует $$2f(n) \geq g(n) + f(n) \geq f(n)$$
+	
+	Тогда при $c_1 = 1$ и $c_2 = 2$ неравентсво из определения $\Theta$ выполняется, а значит $max(f(n), g(n)) = \Theta(f(n) + g(n)))$, ч.т.д.
+
+
+	\subsection*{Задача 4}
+	\textbf{Решение:} \\
+	
+	$1, \ (\frac{3}{2})^2, \ n^{\frac{1}{\log n}} , \ \log \log n,  \ \sqrt{\log n}, \ (\sqrt{2})^{\log n}, \ (\log n)^2, \ 	n, \ 2^{\log n} , \ \log n!, $\\
+	$\ n \cdot \log n, \ n^2,\ 4^{\log n}, \ n^3, \ (\log n)!, \ n^{\log \log n}, \ (\log n)^{\log n}, \ n\cdot 2^n, \ e^n, \ n!,$
+	$(n + 1)!, \ 2^{2^n}, \ 2^{2^{n + 1}}$
+	
+	
+
+\end{document}

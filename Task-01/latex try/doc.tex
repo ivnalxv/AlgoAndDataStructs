@@ -1,0 +1,24 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\inputencoding{utf8}
+% Определяем титульный лист
+\author{ . }
+\title {Это название статьи}
+\begin{document}
+	% Создаем титульный лист
+	\maketitle
+	% А тут будет оглавление
+	\tableofcontents
+	\section{Начало}
+	Вот тут начинается моя замечательная статья
+	\begin{equation}
+		\label{eq}
+		\Psi_{\vec{p}_\perp,\,p_-}(x;A_L)\vert_{x_+=0}=\int\limits d^2p_\perp'\int\limits_{-\
+			infty}^{+\infty} dp_-'\,\alpha_{p_-,\,\vec{p}_\perp; p_-'\vec{p}_\perp'}\Psi_{\
+			vec{p}_\perp',\,p_-'}(x;A_L+{\cal A}_0)
+	\end{equation}
+	% Уравнение (\ref{eq}) --- выглядит довольно умно.
+	\section{Конец}
+	\ldots{} а тут она кончается.
+\end{document}
